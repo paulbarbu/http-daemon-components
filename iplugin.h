@@ -7,7 +7,8 @@ class IPlugin
 {
 public:
     virtual ~IPlugin(){}
-    virtual HTTPRequestHandler *getHTTPRequestHandler(const HTTPRequest &requestData)=0;
+    virtual HTTPRequestHandler *getHTTPRequestHandler(
+            const HTTPRequest &requestData) const =0;
 };
 
 Q_DECLARE_INTERFACE(IPlugin, "http-daemon.IHTTPRequestHandlerFactory/1.0")

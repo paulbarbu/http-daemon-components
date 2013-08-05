@@ -21,7 +21,7 @@ public:
     void appendBody(const char *value);
     void setHeaderField(const QString &key, const QString &value);
     void addHeaderFields(const QHash<QString, QString> &value);
-    QByteArray get();
+    QByteArray get() const;
     QByteArray getPartial();
 
 private:
@@ -30,7 +30,7 @@ private:
     QByteArray statusCode;
     QHash<QByteArray, QByteArray> fields;
 
-    bool isValidStatusCode(unsigned int value);
+    bool isValidStatusCode(unsigned int value) const;
 };
 
 #endif // HTTPRESPONSE_H

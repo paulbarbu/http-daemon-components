@@ -47,7 +47,7 @@ void HTTPResponse::setBody(const QByteArray &value)
     body = value;
 }
 
-QByteArray HTTPResponse::get()
+QByteArray HTTPResponse::get() const
 {
     //TODO: memoize the response until a set*() method is called
 
@@ -84,7 +84,7 @@ QByteArray HTTPResponse::getPartial()
     return response;
 }
 
-bool HTTPResponse::isValidStatusCode(unsigned int value)
+bool HTTPResponse::isValidStatusCode(unsigned int value) const
 {
     int firstDigit = value / 100;
     if(firstDigit >= 1 && firstDigit <= 5){
