@@ -14,7 +14,7 @@ struct HTTPRequest
     double protocolVersion;
     int contentLength;
 
-    QHash<QString, QStringList> fields;
+    QHash<QString, QStringList> fields; //TODO: use QVariant instead of QStringList
     QHash<QString, QString> postData;
 };
 
