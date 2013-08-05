@@ -19,7 +19,8 @@ class HTTPRequestHandler : public QObject
 {
     Q_OBJECT
 public:
-    HTTPRequestHandler(const HTTPRequest &r) : requestData(r) {}
+    HTTPRequestHandler(const HTTPRequest &r, QObject *parent=0) :
+        QObject(parent), requestData(r) {}
     virtual ~HTTPRequestHandler() {}
     virtual void createResponse()=0;/*
     void setRequestData(const HTTPRequest &r){
