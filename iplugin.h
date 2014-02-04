@@ -11,5 +11,5 @@ public:
             const HTTPRequest &requestData) const =0;
 };
 
-Q_DECLARE_INTERFACE(IPlugin, "http-daemon.IHTTPRequestHandlerFactory/1.0")
+Q_DECLARE_INTERFACE(IPlugin, "http-daemon.IPlugin/1.0")
 #endif // IHTTPREQUESTHANDLERFACTORY_H
