@@ -29,6 +29,8 @@ private:
     QByteArray reasonPhrase;
     QByteArray statusCode;
     QHash<QByteArray, QByteArray> fields;
+    //TODO: maybe use QVariant here
+    //TODO: add a cookieJar and change loginplugin to use it
 
     bool isValidStatusCode(unsigned int value) const;
 };
