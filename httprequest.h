@@ -18,7 +18,7 @@ struct HTTPRequest
     QHostAddress host;
 
     QHash<QString, QVariant> fields;
-    QHash<QString, QString> postData; //TODO: use QVariant instead of QStringList
+    QHash<QString, QString> postData;
 };
 
 #endif // HTTPREQUEST_H
