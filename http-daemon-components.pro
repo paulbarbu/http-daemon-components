@@ -17,6 +17,9 @@ HEADERS += httpresponse.h \
 	httprequest.h \
 	httprequesthandler.h \
 	iplugin.h
+
+CONFIG += c++11
+
 unix:!symbian {
 	maemo5 {
 		target.path = /opt/usr/lib

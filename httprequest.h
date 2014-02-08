@@ -6,6 +6,7 @@
 #include <QString>
 #include <QVariant>
 #include <QHostAddress>
+#include <QNetworkCookie>
 
 struct HTTPRequest
 {
@@ -16,6 +17,7 @@ struct HTTPRequest
     int contentLength;
     unsigned int port;
     QHostAddress host;
+    QList<QNetworkCookie> cookieJar;
 
     QHash<QString, QVariant> fields;
     QHash<QString, QString> postData;
