@@ -13,14 +13,14 @@ CONFIG += staticlib
 SOURCES += httpresponse.cpp
 
 HEADERS += httpresponse.h \
-    httprequest.h \
-    httprequesthandler.h \
-    iplugin.h
+	httprequest.h \
+	httprequesthandler.h \
+	iplugin.h
 unix:!symbian {
-    maemo5 {
-        target.path = /opt/usr/lib
-    } else {
-        target.path = /usr/lib
-    }
-    INSTALLS += target
+	maemo5 {
+		target.path = /opt/usr/lib
+	} else {
+		target.path = /usr/lib
+	}
+	INSTALLS += target
 }

@@ -4,7 +4,8 @@
 #include <QHash>
 #include <QUrl>
 #include <QString>
-#include <QStringList>
+#include <QVariant>
+#include <QHostAddress>
 
 struct HTTPRequest
 {
@@ -13,9 +14,11 @@ struct HTTPRequest
     QString protocol;
     double protocolVersion;
     int contentLength;
+    unsigned int port;
+    QHostAddress host;
 
-    QHash<QString, QStringList> fields; //TODO: use QVariant instead of QStringList
-    QHash<QString, QString> postData;
+    QHash<QString, QVariant> fields;
+    QHash<QString, QString> postData; //TODO: use QVariant instead of QStringList
 };
 
 #endif // HTTPREQUEST_H

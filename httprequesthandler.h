@@ -7,7 +7,7 @@
 #include "httpresponse.h"
 
 /* TODO: https://qt-project.org/doc/qt-4.8/plugins-howto.html
- * says that I shoudl have only pure virtual functions, is it ok not to?
+ * says that I should have only pure virtual functions, is it ok not to?
  */
 
 /*TODO: the interface of the plugin should declare how the plugin returns a
@@ -22,7 +22,8 @@ public:
     HTTPRequestHandler(const HTTPRequest &r, QObject *parent=0) :
         QObject(parent), requestData(r) {}
     virtual ~HTTPRequestHandler() {}
-    virtual void createResponse()=0;/*
+    virtual void createResponse()=0;
+    /*
     void setRequestData(const HTTPRequest &r){
         requestData = r;
     }*/
