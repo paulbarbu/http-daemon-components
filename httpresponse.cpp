@@ -57,8 +57,9 @@ QByteArray HTTPResponse::get() const
 
     QByteArray response = "HTTP/1.0 " + statusCode + " " + reasonPhrase + "\r\n";
 
-    QHash<QByteArray, QByteArray>::const_iterator i;
+    QMultiHash<QByteArray, QByteArray>::const_iterator i;
     for(i = fields.constBegin(); i != fields.constEnd(); ++i){
+        //TODO: if this already has a ":" don't add it
         response += i.key() + ": " + i.value() + "\r\n";
     }
 
@@ -116,6 +117,11 @@ void HTTPResponse::addHeaderFields(const QHash<QString, QString> &value)
     for(i = value.constBegin(); i != value.constEnd(); ++i){
         setHeaderField(i.key(), i.value());
     }
+}
+
+void HTTPResponse::setCookie(const QNetworkCookie &cookie)
+{
+    setHeaderField("Set-Cookie", cookie.toRawForm());
 }
 
 void HTTPResponse::setReasonPhrase(const QByteArray &value)
