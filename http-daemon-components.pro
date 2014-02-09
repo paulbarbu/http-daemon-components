@@ -18,7 +18,7 @@ HEADERS += httpresponse.h \
 	httprequesthandler.h \
 	iplugin.h
 
-CONFIG += c++11
+QMAKE_CXXFLAGS += -std=c++11
 
 unix:!symbian {
 	maemo5 {
