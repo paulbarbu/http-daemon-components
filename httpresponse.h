@@ -39,6 +39,9 @@ private:
     QByteArray statusCode;
     QMultiHash<QByteArray, QByteArray> fields;
     //TODO: maybe use QVariant here
+    //TODO: maybe instead of a QMultiHash it's better to revert to a QHash
+    //and store cookies in a separate QList in order to allow removal too
+    //and only add them to the header when get() is called
 
     bool isValidStatusCode(unsigned int value) const;
 };
