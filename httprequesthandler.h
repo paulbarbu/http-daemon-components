@@ -2,6 +2,9 @@
 #define HTTPREQUESTHANDLER_H
 
 #include <QObject>
+#include <QHash>
+#include <QString>
+#include <QVariant>
 
 #include "httprequest.h"
 #include "httpresponse.h"
@@ -10,17 +13,15 @@
  * says that I should have only pure virtual functions, is it ok not to?
  */
 
-/*TODO: the interface of the plugin should declare how the plugin returns a
- *HTTPRequestHandler, so IPlugin would help me pass a HTTPRequest to
- *HTTPRequestHandler, which will be returned
- */
-
 class HTTPRequestHandler : public QObject
 {
     Q_OBJECT
 public:
     HTTPRequestHandler(const HTTPRequest &r, QObject *parent=0) :
         QObject(parent), requestData(r) {}
+    HTTPRequestHandler(const HTTPRequest &r, const QHash<QString, QVariant> &s, QObject *parent=0) :
+        QObject(parent), requestData(r), settings(s) {}
+
     virtual ~HTTPRequestHandler() {}
     virtual void createResponse()=0;
     /*
@@ -30,6 +31,7 @@ public:
 
 protected:
     HTTPRequest requestData;
+    const QHash<QString, QVariant> settings;
 
 signals:
     void responseWritten(HTTPResponse &response);
