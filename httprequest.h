@@ -16,7 +16,7 @@ struct HTTPRequest
     double protocolVersion;
     int contentLength;
     unsigned int port;
-    QHostAddress host;
+    QHostAddress host, remoteAddress;
     QList<QNetworkCookie> cookieJar;
 
     QHash<QString, QVariant> fields;
