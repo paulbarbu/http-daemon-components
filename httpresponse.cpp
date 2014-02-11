@@ -17,6 +17,11 @@ bool HTTPResponse::setStatusCode(unsigned int value)
     return true;
 }
 
+QByteArray HTTPResponse::getStatusCode() const
+{
+    return statusCode;
+}
+
 void HTTPResponse::setBody(const QString &value)
 {
     body = value.toUtf8();
@@ -25,6 +30,11 @@ void HTTPResponse::setBody(const QString &value)
 void HTTPResponse::setBody(const char *value)
 {
     body = value;
+}
+
+QByteArray HTTPResponse::getBody() const
+{
+    return body;
 }
 
 void HTTPResponse::appendBody(const QString &value)
@@ -105,6 +115,11 @@ void HTTPResponse::setReasonPhrase(const char *value)
     reasonPhrase = value;
 }
 
+QByteArray HTTPResponse::getReasonPhrase() const
+{
+    return reasonPhrase;
+}
+
 void HTTPResponse::setHeaderField(const QString &key, const QString &value)
 {
     fields.insert(key.toUtf8(), value.toUtf8());
@@ -117,6 +132,11 @@ void HTTPResponse::addHeaderFields(const QHash<QString, QString> &value)
     for(i = value.constBegin(); i != value.constEnd(); ++i){
         setHeaderField(i.key(), i.value());
     }
+}
+
+QMultiHash<QByteArray, QByteArray> HTTPResponse::getFields() const
+{
+    return fields;
 }
 
 void HTTPResponse::setCookie(const QNetworkCookie &cookie)
