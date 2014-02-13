@@ -15,12 +15,14 @@ struct HTTPRequest
     QString protocol;
     double protocolVersion;
     int contentLength;
+    QString contentType;
     unsigned int port;
     QHostAddress host, remoteAddress;
     QList<QNetworkCookie> cookieJar;
 
     QHash<QString, QVariant> fields;
     QHash<QString, QString> postData;
+    QByteArray rawPostData;
 };
 
 #endif // HTTPREQUEST_H

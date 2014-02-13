@@ -49,8 +49,6 @@ private:
     //and store cookies in a separate QList in order to allow removal too
     //and only add them to the header when get() is called
 
-    //TODO: add content-type here and to the HTTPRequest
-
     //TODO: provide soem addRaw* methods (addRawBody, addRawHeader, addRaw)
 
     //TODO: implement some clear() method
