@@ -69,7 +69,6 @@ QByteArray HTTPResponse::get() const
 
     QMultiHash<QByteArray, QByteArray>::const_iterator i;
     for(i = fields.constBegin(); i != fields.constEnd(); ++i){
-        //TODO: if this already has a ":" don't add it
         response += i.key() + ": " + i.value() + "\r\n";
     }
 

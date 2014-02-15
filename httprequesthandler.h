@@ -17,17 +17,14 @@ class HTTPRequestHandler : public QObject
 {
     Q_OBJECT
 public:
-    HTTPRequestHandler(const HTTPRequest &r, QObject *parent=0) :
-        QObject(parent), requestData(r) {}
+    HTTPRequestHandler(){}
+    HTTPRequestHandler(const QHash<QString, QVariant> &s, QObject *parent=0) :
+        QObject(parent), settings(s) {}
     HTTPRequestHandler(const HTTPRequest &r, const QHash<QString, QVariant> &s, QObject *parent=0) :
         QObject(parent), requestData(r), settings(s) {}
 
     virtual ~HTTPRequestHandler() {}
-    virtual void createResponse()=0;
-    /*
-    void setRequestData(const HTTPRequest &r){
-        requestData = r;
-    }*/
+    virtual void createResponse(const HTTPRequest &r)=0;
 
 protected:
     HTTPRequest requestData;
