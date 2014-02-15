@@ -104,6 +104,14 @@ bool HTTPResponse::isValidStatusCode(unsigned int value) const
     return false;
 }
 
+void HTTPResponse::clear()
+{
+    reasonPhrase.clear();
+    body.clear();
+    statusCode.clear();
+    fields.clear();
+}
+
 void HTTPResponse::setReasonPhrase(const QString &value)
 {
     reasonPhrase = value.toUtf8();

@@ -38,6 +38,7 @@ public:
     QByteArray getPartial();
 
     bool isValidStatusCode(unsigned int value) const;
+    void clear();
 
 private:
     QByteArray body;
@@ -47,10 +48,6 @@ private:
     //TODO: maybe instead of a QMultiHash it's better to revert to a QHash
     //and store cookies in a separate QList in order to allow removal too
     //and only add them to the header when get() is called
-
-    //TODO: provide soem addRaw* methods (addRawBody, addRawHeader, addRaw)
-
-    //TODO: implement some clear() method
 };
 
 #endif // HTTPRESPONSE_H

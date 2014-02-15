@@ -20,14 +20,11 @@ public:
     HTTPRequestHandler(){}
     HTTPRequestHandler(const QHash<QString, QVariant> &s, QObject *parent=0) :
         QObject(parent), settings(s) {}
-    HTTPRequestHandler(const HTTPRequest &r, const QHash<QString, QVariant> &s, QObject *parent=0) :
-        QObject(parent), requestData(r), settings(s) {}
 
     virtual ~HTTPRequestHandler() {}
     virtual void createResponse(const HTTPRequest &r)=0;
 
 protected:
-    HTTPRequest requestData;
     const QHash<QString, QVariant> settings;
 
 signals:
