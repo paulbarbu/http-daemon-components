@@ -28,7 +28,7 @@ protected:
     const QHash<QString, QVariant> settings;
 
 signals:
-    void responseWritten(HTTPResponse &response);
+    void responseWritten(HTTPResponse response);
     void endOfWriting();
 };
 

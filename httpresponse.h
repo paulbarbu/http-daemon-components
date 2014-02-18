@@ -6,6 +6,7 @@
 #include <QHash>
 #include <QMultiHash>
 #include <QNetworkCookie>
+#include <QMetaType>
 
 class HTTPResponse
 {
@@ -49,5 +50,7 @@ private:
     //and store cookies in a separate QList in order to allow removal too
     //and only add them to the header when get() is called
 };
+
+Q_DECLARE_METATYPE(HTTPResponse);
 
 #endif // HTTPRESPONSE_H
