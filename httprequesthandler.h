@@ -29,6 +29,7 @@ protected:
 
 signals:
     void responseWritten(HTTPResponse response);
+    void rawDataWritten(uchar *data, int size);
     void endOfWriting();
 };
 
