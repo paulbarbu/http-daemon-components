@@ -28,6 +28,7 @@ protected:
     const QHash<QString, QVariant> settings;
 
 signals:
+    void redirect(HTTPRequest requestData);
     void responseWritten(HTTPResponse response);
     void rawDataWritten(uchar *data, int size);
     void endOfWriting();
